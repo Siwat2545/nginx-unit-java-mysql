@@ -4,9 +4,9 @@ chmod 777 -v /run/mysqld
 mkdir -p /config/database
 if [ -z "$(ls -A /config/database)" ]; then
    echo "Initializing . . ."
-   mysqld --initialize /config/database
-   mysqld &
+   mysqld --initialize --datadir /config/database
+   mysqld --datadir /config/database &
    cat /software/initializedb.sql | mysql
 else
-   mysqld &
+   mysqld --datadir /config/database &
 fi
