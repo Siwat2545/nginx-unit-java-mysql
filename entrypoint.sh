@@ -4,8 +4,8 @@
 mkdir -p /config/database
 
 #Start MariaDB
-mkdir /run/mysql
-chmod 777 /run/mysql
+mkdir /run/mysqld
+chmod 777 /run/mysqld
 mariadbd &
 
 #Initialize Database if necessary
