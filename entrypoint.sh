@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#Start MariaDB
+#Start MySQL
 chmod +x /software/initializedb.sh
 bash /software/initializedb.sh
 
