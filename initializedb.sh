@@ -2,11 +2,11 @@ echo "Starting Database Initialization Script."
 mkdir -p /run/mysqld
 chmod 777 -v /run/mysqld
 mkdir -p /config/database
-if [ -z "$(ls -A /config)" ]; then
+if [ -z "$(ls -A /config/database)" ]; then
    echo "Initializing . . ."
-   cp -rv /var/lib/mysql /config/database
-   mariadbd &
+   mysqld --initialize /config/database
+   mysqld &
    cat /software/initializedb.sql | mysql
 else
-   mariadbd &
+   mysqld &
 fi
