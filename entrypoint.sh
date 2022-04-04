@@ -1,14 +1,6 @@
 #!/bin/bash
 
-#Make database directory
-mkdir -p /config/database
-
 #Start MariaDB
-mkdir /run/mysqld
-chmod 777 /run/mysqld
-mariadbd &
-
-#Initialize Database if necessary
 chmod +x /software/initializedb.sh
 bash /software/initializedb.sh
 
