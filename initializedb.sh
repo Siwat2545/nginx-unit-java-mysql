@@ -6,6 +6,7 @@ if [ -z "$(ls -A /config/database)" ]; then
    echo "Initializing . . ."
    mysqld --initialize-insecure --datadir /config/database
    mysqld --datadir /config/database &
+   sleep 15s
    cat /software/initializedb.sql | mysql
 else
    mysqld --datadir /config/database &
